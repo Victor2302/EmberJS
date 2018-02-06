@@ -1,0 +1,14 @@
+<h1>yooooooooooooooo</h1>
+
+
+Nom : {{model.name}}
+{{#link-to "user.update" class="btn" }}Modifier{{/link-to}}
+<h2>déso pas déso</h2>
+<ul class="list-group">
+  {{#each model.skills as |skill|}}
+    <li class="list-group-item">{{skill}}</li>
+  {{/each}}
+</ul>
+
+
+{{outlet}}
