@@ -1,0 +1,21 @@
+<table class="ui single line table">
+  <thead>
+  <tr>
+    <th colspan="2">{{title}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each datas as |object|}}
+    <tr>
+      <td>{{object}}</td>
+      <td><a class="ui icon tiny button floated" {{action "delete" object}}>
+        <i class="ui remove icon"></i>
+      </a></td>
+    </tr>
+  {{else}}
+    <tr>
+      <td colspan="2">Pas de {{title}} à afficher</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

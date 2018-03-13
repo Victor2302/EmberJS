@@ -1,0 +1,42 @@
+<div class="ui icon message">
+  <i class="large icons">
+    <i class="user icon"></i>
+    <i class="inverted corner add icon"></i>
+  </i>
+  <div class="ui container">
+    <div class="header">Projet</div>
+    <p>Nouveau projet</p>
+  </div>
+
+</div>
+
+<form class="ui form">
+  {{ui-input-field value=model.name name="Nom du projet"}}
+  {{ui-input-field value=model.description name="Description"}}
+    <div class="two fields">
+      {{ui-input-field value=model.dateDebut type="date" name="dateDebut"}}
+      {{ui-input-field value=model.dateFin type="date" name="dateFin"}}
+    </div>
+  <div class="ui selection dropdown">
+    {{input type="hidden" value=model.developerId}}
+    <i class="dropdown icon"></i>
+    <div class="default text">Choisir un proprio</div>
+    <div class="menu">
+      {{#each model.developer as |dev|}}
+        <div class="item" data-value="{{dev.id}}">
+          {{dev}}
+        </div>
+
+      {{/each}}
+
+    </div>
+
+  </div>
+</form>
+
+<div class="ui segment">
+  <a {{action "save" model}} class="ui positive button">Valider</a>
+  {{#link-to "developpers" class="ui button"}}Annuler{{/link-to}}
+</div>
+
+{{outlet}}

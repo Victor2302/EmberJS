@@ -1,0 +1,11 @@
+<hi class="ui header">Projets</hi>
+<br>
+{{#link-to "project.new" class="ui button"}}
+  <i class="ui plus icon"></i>
+  Ajouter un projet
+
+{{/link-to}}
+
+{{data-table datas=model title="Projets"}}
+
+{{outlet}}
