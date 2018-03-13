@@ -1,0 +1,19 @@
+<form>
+  <div class="form-group">
+    <label for="nom">Nom :</label>
+    {{input value=model.nom id="nom" class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prenom :</label>
+    {{input value=model.prenom id="prenom" class="form-control"}}
+  </div>
+  <div class="form-group">
+    <label for="email">Email : </label>
+    {{input value=model.email id="email" class="form-control"}}
+  </div>
+</form>
+
+<button class="btn btn-success" {{action "modifier" model}}>Modifier</button>
+<button class="btn btn-primary" {{action "" model}}>Annuler</button>
+
+{{outlet}}

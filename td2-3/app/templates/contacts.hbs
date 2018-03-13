@@ -1,0 +1,41 @@
+<div class="panel panel-default" style="border : solid; border-color: coral;border-radius:7px;">
+
+  <div class="panel-heading" style="background-color: coral; margin-left: 0px"><b>Contact</b></div>
+
+
+  <div class="panel-body" style="padding:10px 10px 10px 10px">
+    {{input class="form-control" value=model.filter placeholder="Filtrer"}}
+    <table class="table table-striped">
+      <tbody>
+      <tr class="table-first">
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Mail</td>
+        <td></td>
+      </tr>
+      {{#each model.contacts as  |contact|}}
+        <tr>
+          <td>{{contact.nom}}</td>
+          <td>{{contact.prenom}}</td>
+          <td>{{contact.email}}</td>
+          <td>
+            <button {{action "delete" contact}} class="btn btn-sm btn-danger">{{fa-icon "trash"}}</button>
+            {{#link-to "contacts.modifier" class="btn btn-sm btn-notify"}}
+              {{fa-icon "cogs"}}
+            {{/link-to}}
+          </td>
+        </tr>
+      {{/each}}
+      <br>
+
+        {{#link-to "contacts.add" class="btn btn-dark"}}
+          Ajouter contact
+        {{/link-to}}
+
+      {{outlet}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
